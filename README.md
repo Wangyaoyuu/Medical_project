@@ -1,5 +1,5 @@
 # Medicial_project
-(代码写的有点丑)
+(代码写的有点丑) 
 
 ## Model
 load_model.py
@@ -9,6 +9,11 @@ load_model.py
 ResNet50 和 Efficient-onehot使用focal loss训练，其余都是使用 SmoothL1 loss。所以这两个模型需要用train_test_onehot.py来单独训练
 
 其余网络使用train_test_torch.py来训练
+
+### image_size
+'ViT','ResNet50', 'ResNet50_sl1'使用256 $\times$ 256
+
+'Efficient', 'Efficient-onehot', 'Efficient-fine', 'Efficient-not'使用512 $\times$ 512
 
 ## Data
 load_data.py包括函数
