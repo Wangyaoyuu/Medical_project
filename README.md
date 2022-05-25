@@ -10,7 +10,7 @@ ResNet50 和 Efficient-onehot使用focal loss训练，其余都是使用 SmoothL
 
 其余网络使用train_test_torch.py来训练
 
-Efficient-not没有使用预训练的参数，除了Efficient-not以外的网络默认使用在ImageNet上预训练的权重参数。
+Efficient-not没有使用预训练的参数，除了Efficient-not以外的Efficient网络默认使用在ImageNet上预训练的权重参数。
 
 ### image_size
 'ViT','ResNet50', 'ResNet50_sl1'使用256 $\times$ 256
@@ -27,7 +27,13 @@ APTOS. (2019) Available: https://www.kaggle.com/c/aptos2019-blindnessdetection
 
 trainSet和testSet作为训练过程中数据的组合输入
 
-### ps:数据有问题，使用data_pre.py读入的时候要手动修改一些数据的问题。
+### data_preprare
+
+data_pre.py 处理基本数据
+
+data_pre_pretrain.py 处理额外数据
+
+#### ps:数据有问题，使用data_pre.py读入的时候要手动修改一些数据的问题。
 
 ## Pretrain
 pretrain.py
@@ -37,7 +43,9 @@ fine_tune.py
 先运行pretrain.py得到pretrain模型，使用额外数据训练，使用全部基本数据测试。再运行fine_tune.py微调。
 
 ## Train
-基本上就是dataload之后直接训练，每个epoch会测试一下结果。学习率可以再仔细调整。
+基本上就是dataload之后直接训练，每个epoch会测试一下结果。使用kappa作为validation的指标。
+
+学习率可以再仔细调整。学习率调整使用的schedule有点复杂，我自己其实也不太懂...拿来用了，建议直接忽略。
 
 ## Kappa
 test_kappa.py可根据预训练模型和数据得到对应的kappa分数，选取两眼中更大的标签作为预测和结果。
