@@ -1,5 +1,5 @@
 # Medicial_project
-(代码写的有点丑) 
+(代码写的有点丑，仅作抛砖引玉之用，会出现bug和很多错误) 
 
 ## Model
 load_model.py
@@ -9,6 +9,8 @@ load_model.py
 ResNet50 和 Efficient-onehot使用focal loss训练，其余都是使用 SmoothL1 loss。所以这两个模型需要用train_test_onehot.py来单独训练
 
 其余网络使用train_test_torch.py来训练
+
+Efficient-not没有使用预训练的参数，除了Efficient-not以外的网络默认使用在ImageNet上预训练的权重参数。
 
 ### image_size
 'ViT','ResNet50', 'ResNet50_sl1'使用256 $\times$ 256
@@ -36,3 +38,9 @@ fine_tune.py
 
 ## Train
 基本上就是dataload之后直接训练，每个epoch会测试一下结果。学习率可以再仔细调整。
+
+## Kappa
+test_kappa.py可根据预训练模型和数据得到对应的kappa分数，选取两眼中更大的标签作为预测和结果。
+但是这一步应该是***写错了***，因为在数据处理的时候左右眼好像没有根据奇数和偶数放在一起，仅作为参考。
+
+
