@@ -20,6 +20,8 @@ APTOS. (2019) Available: https://www.kaggle.com/c/aptos2019-blindnessdetection
 
 trainSet和testSet作为训练过程中数据的组合输入
 
+### ps:数据有问题，使用data_pre.py读入的时候要手动修改一些数据的问题。
+
 ## Pretrain
 pretrain.py
 
