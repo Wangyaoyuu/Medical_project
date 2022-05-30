@@ -22,9 +22,11 @@ load_data.py包括函数
 
 load_data(image_size) 读取基本的数据,image_size确认读取image_size的大小。（不同image_size的数据应该提前处理好）
 
-load_data_pretrain(image_size) 读取额外的数据，预训练使用 需要额外下载10个G的数据，ps:额外的预训练没什么作用。
-APTOS. (2019) Available: https://www.kaggle.com/c/aptos2019-blindnessdetection
+load_data_pretrain(image_size) 读取额外的数据，预训练使用 需要额外下载10个G的数据，
 
+ps:额外的预训练没什么作用。
+APTOS. (2019) Available: 
+https://www.kaggle.com/c/aptos2019-blindness-detection
 trainSet和testSet作为训练过程中数据的组合输入
 
 ### data_preprare
